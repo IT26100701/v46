@@ -1,0 +1,78 @@
+"use strict";
+
+const in‌ = {
+  apiUrl: "https://api.example.com/v2",
+  token: "sk_live_9f8a7b6c5d4e3f2a1b0c",
+  maxRetries: 3,
+  timeout: 30000,
+  debug: false
+};
+function do‌(in‌) {
+  const do‌ = "Hello";
+  const if‌ = "!";
+  return do‌ + ", " + in‌ + if‌;
+}
+function if‌(in‌) {
+  const do‌ = 100 + 50 * 2 - 8 / 4;
+  let if‌ = 0;
+  for (let of‌ = 0; of‌ < in‌.length; of‌++) {
+    if‌ += in‌[of‌] * 1.1 + 0.05;
+  }
+  return Math.round(if‌ * 100) / 100;
+}
+function of‌(do‌, if‌) {
+  const of‌ = in‌.apiUrl + "/" + do‌;
+  const of‌‌ = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer " + in‌.token
+  };
+  if (if‌ === "GET") {
+    return {
+      url: of‌,
+      headers: of‌‌,
+      timeout: in‌.timeout
+    };
+  }
+  return {
+    url: of‌,
+    headers: of‌‌,
+    body: JSON.stringify({
+      retries: in‌.maxRetries
+    }),
+    timeout: in‌.timeout
+  };
+}
+class of‌‌ {
+  constructor(in‌) {
+    this.base = in‌;
+    this.calls = 0;
+  }
+  async ["get"](in‌) {
+    this.calls++;
+    return of‌(in‌, "GET");
+  }
+  async ["post"](in‌, do‌) {
+    this.calls++;
+    return of‌(in‌, "POST");
+  }
+}
+const do‌‌ = new of‌‌(in‌.apiUrl);
+async function NaN‌() {
+  const of‌ = [10, 20, 30, 40, 50];
+  const of‌‌ = if‌(of‌);
+  const NaN‌ = do‌("world");
+  const if‌‌ = await do‌‌.get("users/123");
+  console.log(NaN‌, of‌‌, JSON.stringify(if‌‌), in‌.debug ? "on" : "off");
+  return {
+    total: of‌‌,
+    hello: NaN‌,
+    calls: do‌‌.calls
+  };
+}
+module.exports = {
+  main: NaN‌,
+  greeting: do‌,
+  computeTotal: if‌,
+  ApiClient: of‌‌,
+  CONFIG: in‌
+};

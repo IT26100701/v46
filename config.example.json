@@ -1,0 +1,15 @@
+{
+  "bot": {
+    "token": "REPLACE_ME",
+    "owner_id": "8190472688",
+    "allowed_users": [
+      "8190472688"
+    ],
+    "thumbnail": "https://c.top4top.io/p_3666xqenk0.png"
+  },
+  "deobfuscator": {
+    "work_dir": "plugins/work",
+    "timeout_ms": 600000,
+    "max_file_size_mb": 10
+  }
+}
